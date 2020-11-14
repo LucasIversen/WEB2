@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  table(align="center")
+    tr
+      th Name
+      th Info
+      th Delete
+    each workout in workouts
+      tr
+        td= workout.workoutName
+        th
+          a(class='button', href='/workout/info/' + workout.id) Info
+        th
+          a(class='button', href='/delete/' + workout.id) Delete
+  a(href='/logout') Logout

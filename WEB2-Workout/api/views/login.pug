@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    p Sign in:
+    form(method="post", action="/login")
+        label(for="email") Email
+        input(type="email" id="email" name="email")
+        br
+        label(for="password") Password
+        input(type="password" id="password" name="password")
+        br
+        input(type="submit" value="Submit" id="submit")
+        br
+        a(href='/signup') Sign up

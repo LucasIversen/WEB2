@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to Add workout
+  form(method="post", action="/workout/add")
+    label(for="name") Name
+    input(type="text" id="name" name="name")
+    br
+    input(type="submit" value="Send" id="submit")
+    input(type="reset")

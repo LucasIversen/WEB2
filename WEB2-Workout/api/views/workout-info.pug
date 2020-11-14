@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1= title
+  table(align="center")
+    tr
+      th Workout name
+      th Discription
+      th Duration
+      th Reps
+    each set in sets
+      tr
+        td= set.setName
+        td= set.Description
+        td= set.setsTime
+        td= set.repetetions
+        th
+          a(class='button', href='/workout/info/delete/' + set.id) Delete
+  h2= 'add new set'
+  form(method="post", action= workout.id, align="center")
+        label(for="setName") workout name
+        input(type="setName" id="setName" name="setName")
+        br
+        label(for="Description") Discription
+        input(type="Description" id="Description" name="Description")
+        br
+        label(for="setsTime") Duration
+        input(type="setsTime" id="setsTime" name="setsTime")
+        br
+        label(for="repetetions") repetetions
+        input(type="repetetions" id="repetetions" name="repetetions")
+        br
+        input(type="submit" value="add" id="add")
